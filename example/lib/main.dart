@@ -15,22 +15,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('等级选择器'),
         ),
-        body: const Center(
-          child: SizedBox(
-            width: 370, // 设置宽度
-            height: 10, // 设置高度
-            child: SkillProficiency(
-              levels: [
-                'Novice',
-                'Beginner',
-                'Skillful',
-                'Experienced',
-                // 'Expert',
-              ], // 传入五个等级
-              selectedIndex: 0, // 默认选中Skillful
-              isSelectable: false,
-            ),
-          ),
+        body: SkillProficiency<String>(
+          levels: const [
+            'Novice',
+            'Beginner',
+            'Skillful',
+            'Experienced',
+            // 'Expert',
+          ], // 传入五个等级
+          selectedIndex: 0, // 默认选中Skillful
+          // isSelectable: false,
+          levelNameBuilder: (e) => e,
+          onSelected: (data){
+            print(data.toString());
+          },
         ),
       ),
     );
