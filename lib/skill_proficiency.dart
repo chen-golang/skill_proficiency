@@ -30,30 +30,32 @@ class _SkillProficiencyState extends State<SkillProficiency> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(widget.levels.length, (index) {
-            return Expanded(
-                child : GestureDetector(
-              onTap: widget.isSelectable
-                  ? () {
-                setState(() {
-                  _selectedLevel = index;
-                });
-              }
-                  : null,
-              child: Container(
-                margin: const EdgeInsets.all(3.0),
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: _selectedLevel >= index
-                      ? Colors.yellow[700]
-                      : Colors.grey[300],
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(widget.levels.length, (index) {
+              return Expanded(
+                child: GestureDetector(
+                  onTap: widget.isSelectable
+                      ? () {
+                          setState(() {
+                            _selectedLevel = index;
+                          });
+                        }
+                      : null,
+                  child: Container(
+                    margin: const EdgeInsets.all(3.0),
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: _selectedLevel >= index
+                          ? Colors.yellow[700]
+                          : Colors.grey[300],
+                    ),
+                  ),
                 ),
-              ),
-                ),
-            );
-          }),
+              );
+            }),
+          ),
         ),
         if (widget.isSelectable)
           Align(

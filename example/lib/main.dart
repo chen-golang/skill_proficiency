@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:skill_proficiency/skill_proficiency.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         body: const Center(
           child: SizedBox(
             width: 370, // 设置宽度
-            height: 60, // 设置高度
+            height: 10, // 设置高度
             child: SkillProficiency(
               levels: [
                 'Novice',
