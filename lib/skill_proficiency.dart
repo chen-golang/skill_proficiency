@@ -30,9 +30,7 @@ class _SkillProficiencyState extends State<SkillProficiency> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(widget.levels.length, (index) {
             return Expanded(
@@ -56,7 +54,6 @@ class _SkillProficiencyState extends State<SkillProficiency> {
                 ),
             );
           }),
-        ),
         ),
         if (widget.isSelectable)
           Align(

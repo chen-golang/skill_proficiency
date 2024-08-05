@@ -15,18 +15,18 @@ class MyApp extends StatelessWidget {
         ),
         body: const Center(
           child: SizedBox(
-            width: 400, // 设置宽度
-            height: 70, // 设置高度
+            width: 370, // 设置宽度
+            height: 60, // 设置高度
             child: SkillProficiency(
               levels: [
                 'Novice',
                 'Beginner',
                 'Skillful',
                 'Experienced',
-                // 'Expert'
+                // 'Expert',
               ], // 传入五个等级
               selectedIndex: 0, // 默认选中Skillful
-              // isSelectable: false,
+              isSelectable: false,
             ),
           ),
         ),
